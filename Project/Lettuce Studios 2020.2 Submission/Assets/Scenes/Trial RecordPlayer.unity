@@ -345,25 +345,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disc: {fileID: 1913398543679283129}
-  ObstacletTypeMax: 5
+  ObstacletTypeMax: 1
   pools:
   - ObjectType: 0
     prefab: {fileID: 6895619944214770464, guid: 88abe8fc41968114c9b9b4f53107159f,
       type: 3}
-    size: 2
+    size: 5
   - ObjectType: 1
     prefab: {fileID: 7157271754410400122, guid: 18d9e748a7b38e849961b93487f8fe7d,
       type: 3}
-    size: 2
-  - ObjectType: 2
-    prefab: {fileID: 2978158176149830635, guid: 146091fff131bff4c97b5a5dde4d2ce8,
-      type: 3}
-    size: 2
-  - ObjectType: 3
-    prefab: {fileID: 1284715770906905662, guid: be4b54a109b88c54c8b671034dd0cd02,
-      type: 3}
-    size: 2
-  spawnRate: 2
+    size: 5
+  - ObjectType: 0
+    prefab: {fileID: 0}
+    size: 0
+  - ObjectType: 0
+    prefab: {fileID: 0}
+    size: 0
+  spawnRate: 5
   disconly:
     serializedVersion: 2
     m_Bits: 512
