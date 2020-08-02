@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public AudioSource audioSource;
+    public AudioClip hoverClip;
+    public AudioClip clickClip;
+
+    public void HoverClip()
     {
-        
+        audioSource.PlayOneShot(hoverClip);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ClickClip()
     {
-        
+        audioSource.PlayOneShot(clickClip);
     }
 }
