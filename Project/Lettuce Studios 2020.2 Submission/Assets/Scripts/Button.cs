@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.EventSystems;
 
 public class Button : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Button : MonoBehaviour
 
     public void click()
     {
+
         if (!clicked)
         {
             StartCoroutine(Click());
