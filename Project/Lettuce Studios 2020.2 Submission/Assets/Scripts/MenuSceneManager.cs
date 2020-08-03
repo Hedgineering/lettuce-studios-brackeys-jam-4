@@ -2,18 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using UnityEngine.UIElements;
+using UnityEditor.UI;
 
 public class MenuSceneManager : MonoBehaviour
 {
+    public GameObject SettingsButtonGFX;
+    public GameObject MusicButtonGFX;
+
     public GameObject settingsUI;
     public GameObject musicUi;
     public GameObject gamePlayUI;
     public GameObject exitBackToGamePlayScene;
-    public GameObject settingsButtonFunction;
-
-   public bool musicScenOpen;
+    
+    public bool musicScenOpen;
     public  bool settingsSceneOpen;
     public bool gamePlaySceneOpen;
+   
 
     // Start is called before the first frame update
     void Start()
@@ -54,18 +60,29 @@ public class MenuSceneManager : MonoBehaviour
         }
         //end of bool stuff
 
-
+        //for settings ui
         if (settingsSceneOpen)
         {
             exitBackToGamePlayScene.SetActive(true);
-           // settingsButtonFunction.SetActive(false);
         } else
         {
-            exitBackToGamePlayScene.SetActive(false);
-           // settingsButtonFunction.SetActive(true);
+            settingsUI.GetComponent<Button>().enabled = true;
         }
-
-
+        //for music ui
+        if (musicScenOpen)
+        {
+            exitBackToGamePlayScene.SetActive(true);
+            musicUi.GetComponent<Button>().enabled = false;
+        }
+        else
+        {
+            musicUi.GetComponent<Button>().enabled = true;
+        }
+        //For main menuu ui
+        if (gamePlaySceneOpen)
+        {
+                exitBackToGamePlayScene.SetActive(false);
+        } 
 
     }
 }
