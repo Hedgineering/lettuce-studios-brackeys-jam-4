@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class btnFXController : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class btnFXController : MonoBehaviour
     }
     public void Click()
     {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1 ); 
         myFx.PlayOneShot (clickFx);
     }
 }
