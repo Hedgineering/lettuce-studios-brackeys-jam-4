@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public int health;
+    public float health;
 
     private void Update()
     {
@@ -13,7 +13,7 @@ public class PlayerStats : MonoBehaviour
 
     void CheckIfDie()
     {
-        if (health <= 0)
+        if (health <= 0f)
         {
             Die();
         }
@@ -24,6 +24,15 @@ public class PlayerStats : MonoBehaviour
         //death ui
         //idk what you want to add
         Destroy(gameObject);
+    }
+
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.tag == "enemy")
+        {
+            health -= (30f * Time.deltaTime);
+        }
     }
 
 }
