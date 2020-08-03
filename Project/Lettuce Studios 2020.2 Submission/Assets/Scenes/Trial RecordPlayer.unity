@@ -475,7 +475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disc: {fileID: 1913398543679283129}
-  ObstacletTypeMax: 1
+  ObstacletTypeMax: 0
   spawnRate: 2
   disconly:
     serializedVersion: 2
