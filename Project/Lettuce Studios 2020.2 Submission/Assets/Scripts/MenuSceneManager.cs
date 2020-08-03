@@ -64,20 +64,20 @@ public class MenuSceneManager : MonoBehaviour
         if (settingsSceneOpen)
         {
             exitBackToGamePlayScene.SetActive(true);
-            SettingsButtonGFX.GetComponent<>().isEnabled = false;
+           // SettingsButtonGFX.GetComponent<>().isEnabled = false;
         } else
         {
-            settingsUI.GetComponent<Button>().enabled = true;
+            //settingsUI.GetComponent<Button>().enabled = true;
         }
         //for music ui
         if (musicScenOpen)
         {
             exitBackToGamePlayScene.SetActive(true);
-            musicUi.GetComponent<Button>().enabled = false;
+           // musicUi.GetComponent<Button>().enabled = false;
         }
         else
         {
-            musicUi.GetComponent<Button>().enabled = true;
+           // musicUi.GetComponent<Button>().enabled = true;
         }
         //For main menuu ui
         if (gamePlaySceneOpen)
