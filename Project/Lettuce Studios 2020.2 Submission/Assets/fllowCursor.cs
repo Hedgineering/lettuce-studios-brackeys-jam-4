@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class fllowCursor : MonoBehaviour
 {
-    Vector3 spacePosition;
+    Vector2 spacePosition;
     void Start()
     {
         Cursor.visible = false;
@@ -14,7 +14,7 @@ public class fllowCursor : MonoBehaviour
     
     void Update()
     {
-        spacePosition = Input.mousePosition;
+        spacePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = spacePosition;
 
     }
