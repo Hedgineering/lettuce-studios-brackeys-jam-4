@@ -5129,11 +5129,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c317dc17adce4324b9a0e82b3cd81b8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SettingsButtonGFX: {fileID: 0}
+  MusicButtonGFX: {fileID: 0}
   settingsUI: {fileID: 216350041}
   musicUi: {fileID: 1311672044}
   gamePlayUI: {fileID: 63720662}
   exitBackToGamePlayScene: {fileID: 374827468}
-  settingsButtonPicture: {fileID: 1716315579}
   musicScenOpen: 0
   settingsSceneOpen: 0
   gamePlaySceneOpen: 0
@@ -5579,8 +5580,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1572406611}
-        m_MethodName: 
+      - m_Target: {fileID: 1311672044}
+        m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5590,7 +5591,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1311672044}
+      - m_Target: {fileID: 63720662}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:

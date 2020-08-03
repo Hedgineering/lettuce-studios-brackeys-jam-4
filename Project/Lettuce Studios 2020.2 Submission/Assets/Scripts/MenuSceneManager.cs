@@ -64,6 +64,7 @@ public class MenuSceneManager : MonoBehaviour
         if (settingsSceneOpen)
         {
             exitBackToGamePlayScene.SetActive(true);
+            SettingsButtonGFX.GetComponent<>().isEnabled = false;
         } else
         {
             settingsUI.GetComponent<Button>().enabled = true;
