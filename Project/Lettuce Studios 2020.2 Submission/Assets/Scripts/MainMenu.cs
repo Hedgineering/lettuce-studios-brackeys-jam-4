@@ -5,8 +5,8 @@ using UnityEngine;
 public class MainMenu : MonoBehaviour
 {
     public AudioSource audioSource;
-    public AudioClip hoverClip;
     public AudioClip clickClip;
+    public AudioClip hoverClip;
 
     public void HoverClip()
     {
