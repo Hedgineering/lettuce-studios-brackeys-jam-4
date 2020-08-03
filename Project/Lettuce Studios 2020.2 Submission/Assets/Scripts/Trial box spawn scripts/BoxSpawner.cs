@@ -16,7 +16,7 @@ public class BoxSpawner : MonoBehaviour
 
     [SerializeField] Transform disc;
 
-    [SerializeField] int ObstacletTypeMax;
+    [SerializeField][Range(0,4)] int ObstacletTypeMax;
 
     //public List<obstacles> pools;
 
