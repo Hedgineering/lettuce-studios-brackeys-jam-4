@@ -5,13 +5,19 @@ using UnityEngine;
 public class BoxKill : MonoBehaviour
 {
     [SerializeField] float expireTime;
-    [SerializeField] Transform defaultParent;
+    public Transform defaultParent;
 
     // Start is called before the first frame update
-    void Start()
+
+    private void OnEnable()
     {
+        if (defaultParent != null)
+        {
+            transform.SetParent(defaultParent);
+        }
         StartCoroutine(expire());
     }
+    
 
     private void OnCollisionEnter(Collision collision)
     {
