@@ -107,10 +107,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68ae8acb5f3ad64448bcdb8cf7ff0ad0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-  expireTime: 3
-  defaultParent: {fileID: 0}
-=======
   expireTime: 6
   defaultParent: {fileID: 0}
 --- !u!114 &-6817393989191565029
@@ -125,4 +121,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a43649431cea9794e887e6fb782d5162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
->>>>>>> 7ce18ffc0e77d01e3d7cf7c940676bf8b931e0a2
