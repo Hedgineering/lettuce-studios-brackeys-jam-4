@@ -27,7 +27,7 @@ public class enemyai : MonoBehaviour
         rb.MovePosition(transform.position + (direction * 0.2f * Time.deltaTime));
         distance = Vector3.Distance(player.position, transform.position);
 
-        if (distance < 7f && player.position.y > transform.position.y)
+        if (distance < 10f && player.position.y > transform.position.y)
         {
             rb.AddForce(0f, 20f * Time.deltaTime, 0f, ForceMode.Impulse);
         }
