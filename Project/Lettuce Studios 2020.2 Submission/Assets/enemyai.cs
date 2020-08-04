@@ -23,14 +23,16 @@ public class enemyai : MonoBehaviour
 
     void movetoplayer()
     {
-        direction = player.position - transform.position;
-        rb.MovePosition(transform.position + (direction * 0.2f * Time.deltaTime));
-        distance = Vector3.Distance(player.position, transform.position);
-
-        if (distance < 10f && player.position.y > transform.position.y)
+        if (player != null)
         {
-            rb.AddForce(0f, 20f * Time.deltaTime, 0f, ForceMode.Impulse);
+            direction = player.position - transform.position;
+            rb.MovePosition(transform.position + (direction * 0.2f * Time.deltaTime));
+            distance = Vector3.Distance(player.position, transform.position);
+
+            if (distance < 10f && player.position.y > transform.position.y)
+            {
+                rb.AddForce(0f, 20f * Time.deltaTime, 0f, ForceMode.Impulse);
+            }
         }
-        
     }
 }

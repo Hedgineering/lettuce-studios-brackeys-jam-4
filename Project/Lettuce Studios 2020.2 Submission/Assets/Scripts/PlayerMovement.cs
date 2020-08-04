@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     public int maxJumps;
     private int jumpValue = 0;
 
+
     void Awake()
     {
         rb.freezeRotation = true;
