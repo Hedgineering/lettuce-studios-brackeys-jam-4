@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Button
+  - Midline
+  - DiskBound
+  - CenterTrigger
   layers:
   - Default
   - TransparentFX

@@ -40,6 +40,8 @@ public class DiscSpinner : MonoBehaviour
             }
             pooldictionary.Add(o.ObjectType, objectpool);
         }
+
+        
     }
 
     // Update is called once per frame
