@@ -1598,6 +1598,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: disc
       objectReference: {fileID: 0}
+    - target: {fileID: 579761036274829650, guid: 29eac03977b284b40be92fd154c2ef2a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1280730363600078084, guid: 29eac03977b284b40be92fd154c2ef2a,
         type: 3}
       propertyPath: pools.Array.size
@@ -2254,6 +2259,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ze maker plaque
       objectReference: {fileID: 0}
+    - target: {fileID: 4233911187030459579, guid: 073a70600ec47f54e84e6362321b0add,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4610150924470715667, guid: 073a70600ec47f54e84e6362321b0add,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2834,6 +2844,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427716764693533791, guid: b08c75d65883051489bb477e24e9e348,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5331264469874722144, guid: b08c75d65883051489bb477e24e9e348,
         type: 3}

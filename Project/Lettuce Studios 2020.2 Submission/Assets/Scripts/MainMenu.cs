@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
-    public AudioSource audioSource;
+
+      public AudioSource audioSource;
     public AudioClip clickClip;
     public AudioClip hoverClip;
 
-    public void HoverClip()
+    public void HoverLevel()
     {
         audioSource.PlayOneShot(hoverClip);
     }
 
-    public void ClickClip()
+    public void ClickLevel()
     {
         audioSource.PlayOneShot(clickClip);
     }
