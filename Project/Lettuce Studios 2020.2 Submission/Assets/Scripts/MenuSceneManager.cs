@@ -15,14 +15,13 @@ public class MenuSceneManager : MonoBehaviour
     public GameObject musicUi;
     public GameObject gamePlayUI;
     public GameObject campaignUI;
-    public GameObject exitOutOfCampaignScene;
     public GameObject exitBackToGamePlayScene;
     
     public bool musicScenOpen;
     public  bool settingsSceneOpen;
     public bool gamePlaySceneOpen;
     public bool campaignUISceneOpen;
-
+    //
     // Start is called before the first frame update
     void Start()
     {
@@ -96,9 +95,10 @@ public class MenuSceneManager : MonoBehaviour
                 exitBackToGamePlayScene.SetActive(false);
         }
 
-        if (campaignUISceneOpen)
-        {
-            exitOutOfCampaignScene.SetActive(true);
-        }
+       if (campaignUISceneOpen)
+       {
+            gamePlayUI.SetActive(false);
+            exitBackToGamePlayScene.SetActive(true);
+       }
     }
 }
