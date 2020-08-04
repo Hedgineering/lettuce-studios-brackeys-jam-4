@@ -4,114 +4,106 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    #region fields
     //Moving
     public Rigidbody rb;
-    public GameObject pivot;
-    public Vector3 speed = new Vector3(15, 0, 30);
+    public float speed;
     public float gravity;
     public float maxVelocityChange;
-    public float groundRaySize = 1;
-    private Vector3 originalPosition;
-
-    //Ground Check Stuff
-    Ray ray;
-    RaycastHit hit;
+    private bool grounded = false;
 
     //Jumping
     public bool canJump = true;
     public float jumpHeight;
-    public int maxJumps = 1;
+    public int maxJumps;
     private int jumpValue = 0;
-    #endregion fields
 
-    #region monoBehaviorLoops
+
     void Awake()
     {
         rb.freezeRotation = true;
         rb.useGravity = false;
     }
 
-    private void Start()
-    {
-        
-        rb.inertiaTensor = rb.inertiaTensor + new Vector3(2, 2, rb.inertiaTensor.z * 100);
-        originalPosition = transform.position;
-        
-    }
-
     private void Update()
     {
-        
         DoubleJumping();
         ResetJumpValue();
-        Debug.DrawRay(transform.position, Vector3.down * groundRaySize);
     }
 
     void FixedUpdate()
     {
         Movement();
     }
-    #endregion monoBehaviorLoops
 
-    #region movement
     void Movement()
     {
-        if (IsGrounded())
+        if (grounded)
         {
-            Vector3 targetVelocity = new Vector3(Input.GetAxisRaw("Horizontal") * speed.x, 0, Input.GetAxisRaw("Vertical") * speed.z);
+            Vector3 targetVelocity = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+            targetVelocity = transform.TransformDirection(targetVelocity);
+            targetVelocity *= speed;
 
-            Vector3 pivotRotation = pivot.transform.rotation.eulerAngles;
-            pivot.transform.eulerAngles += Vector3.up * targetVelocity.z;
-            rb.AddRelativeForce(Vector3.right * targetVelocity.x * Time.deltaTime, ForceMode.VelocityChange);
+            Vector3 velocity = rb.velocity;
+            Vector3 velocityChange = (targetVelocity - velocity);
+
+            velocityChange.x = Mathf.Clamp(velocityChange.x, -maxVelocityChange, maxVelocityChange);
+            velocityChange.z = Mathf.Clamp(velocityChange.z, -maxVelocityChange, maxVelocityChange);
+            velocityChange.y = 0;
+
+            rb.AddForce(velocityChange, ForceMode.VelocityChange);
 
         }
 
-      
+        else if (!grounded)
+        {
+
+            Vector3 targetVelocity = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+            targetVelocity = transform.TransformDirection(targetVelocity);
+            targetVelocity *= speed;
+
+            Vector3 velocity = rb.velocity;
+            Vector3 velocityChange = (targetVelocity - velocity);
+
+            velocityChange.x = Mathf.Clamp(velocityChange.x, -maxVelocityChange, maxVelocityChange);
+            velocityChange.z = Mathf.Clamp(velocityChange.z, -maxVelocityChange, maxVelocityChange);
+            velocityChange.y = 0;
+
+            rb.AddForce(velocityChange, ForceMode.VelocityChange);
+        }
 
         rb.AddForce(new Vector3(0, -gravity * rb.mass, 0));
     }
-    #endregion movement
 
-    #region jumping
     void DoubleJumping()
     {
-        //Initial Jump
-        if (IsGrounded() && canJump && Input.GetKeyDown(KeyCode.Space))
+        if (grounded && canJump && Input.GetKey(KeyCode.Space))
         {
             rb.velocity = new Vector3(rb.velocity.x, JumpForce(), rb.velocity.z);
+            grounded = false;
         }
 
-        //Further Jumps off the ground --Not Currently Functional
-        //else if (!IsGrounded() && Input.GetKeyDown(KeyCode.Space) && jumpValue <= maxJumps)
-        //{
-        //    rb.velocity = new Vector3(rb.velocity.x, JumpForce(), rb.velocity.z);
-        //}
-
-        jumpValue++;
+        else if (!grounded && Input.GetKeyDown(KeyCode.Space) && jumpValue < maxJumps)
+        {
+            rb.velocity = new Vector3(rb.velocity.x, JumpForce(), rb.velocity.z);
+            jumpValue++;
+        }
     }
+
     void ResetJumpValue()
     {
-        if (IsGrounded())
+        if (grounded)
         {
             jumpValue = 0;
         }
     }
 
-    bool IsGrounded()
+    void OnCollisionStay(Collision collision)
     {
-        ray = new Ray(transform.position, Vector3.down);
-        return Physics.Raycast(ray, out hit, groundRaySize);
+        grounded = true;
     }
 
     float JumpForce()
     {
         return Mathf.Sqrt(2 * jumpHeight * gravity);
     }
-    #endregion jumping
-
-    void ResetPosition()
-    {
-        transform.position = originalPosition;
-    }    
 }

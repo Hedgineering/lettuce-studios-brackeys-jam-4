@@ -64,7 +64,7 @@ public class PlayerStats : MonoBehaviour
     {
         if (collision.gameObject.tag == "enemy")
         {
-           health -= (30f * Time.deltaTime);
+           health -= (10f * Time.deltaTime);
         }
     }
 
