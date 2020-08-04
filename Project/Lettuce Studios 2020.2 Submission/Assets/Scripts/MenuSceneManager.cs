@@ -14,19 +14,19 @@ public class MenuSceneManager : MonoBehaviour
     public GameObject settingsUI;
     public GameObject musicUi;
     public GameObject gamePlayUI;
-    public GameObject campaignUI;
-    public GameObject exitOutOfCampaignScene;
+  //  public GameObject campaignUI;
+   // public GameObject exitOutOfCampaignScene;
     public GameObject exitBackToGamePlayScene;
     
     public bool musicScenOpen;
     public  bool settingsSceneOpen;
     public bool gamePlaySceneOpen;
     public bool campaignUISceneOpen;
-
+    //
     // Start is called before the first frame update
     void Start()
     {
-        campaignUI.SetActive(false);
+       // campaignUI.SetActive(false);
         gamePlayUI.SetActive(true);
         settingsUI.SetActive(false);
         musicUi.SetActive(false);
@@ -61,14 +61,14 @@ public class MenuSceneManager : MonoBehaviour
         {
             settingsSceneOpen = true;
         }
-        if (campaignUI.active)
-        {
-            campaignUISceneOpen = false;
-        }
-        else
-        {
-            campaignUISceneOpen = true;
-        }
+        //if (campaignUI.active)
+       // {
+       //     campaignUISceneOpen = false;
+      //  }
+       // else
+      //  {
+       //     campaignUISceneOpen = true;
+       // }
         //end of bool stuff
 
         //for settings ui
@@ -96,9 +96,9 @@ public class MenuSceneManager : MonoBehaviour
                 exitBackToGamePlayScene.SetActive(false);
         }
 
-        if (campaignUISceneOpen)
-        {
-            exitOutOfCampaignScene.SetActive(true);
-        }
+       // if (campaignUISceneOpen)
+       // {
+       //     exitOutOfCampaignScene.SetActive(true);
+       // }
     }
 }
