@@ -31,13 +31,11 @@ public class PlayerMovement : MonoBehaviour
         rb.freezeRotation = true;
         rb.useGravity = false;
     }
-
+  
     private void Start()
     {
-        
         rb.inertiaTensor = rb.inertiaTensor + new Vector3(2, 2, rb.inertiaTensor.z * 100);
         originalPosition = transform.position;
-        
     }
 
     private void Update()
@@ -78,7 +76,8 @@ public class PlayerMovement : MonoBehaviour
     {
         //Initial Jump
         if (IsGrounded() && canJump && Input.GetKeyDown(KeyCode.Space))
-        {
+        {    
+            #endregion)
             rb.velocity = new Vector3(rb.velocity.x, JumpForce(), rb.velocity.z);
         }
 
@@ -108,7 +107,8 @@ public class PlayerMovement : MonoBehaviour
     {
         return Mathf.Sqrt(2 * jumpHeight * gravity);
     }
-    #endregion jumping
+
+
 
     void ResetPosition()
     {
