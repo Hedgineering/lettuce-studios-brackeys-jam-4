@@ -8,27 +8,22 @@ using UnityEditor.UI;
 
 public class MenuSceneManager : MonoBehaviour
 {
-    public GameObject SettingsButtonGFX;
-    public GameObject MusicButtonGFX;
-
     public GameObject settingsUI;
     public GameObject musicUi;
     public GameObject gamePlayUI;
-    public GameObject campaignUI;
     public GameObject exitBackToGamePlayScene;
     
     public bool musicScenOpen;
     public  bool settingsSceneOpen;
     public bool gamePlaySceneOpen;
-    public bool campaignUISceneOpen;
     //
     // Start is called before the first frame update
     void Start()
     {
-        campaignUI.SetActive(false);
         gamePlayUI.SetActive(true);
         settingsUI.SetActive(false);
         musicUi.SetActive(false);
+        exitBackToGamePlayScene.SetActive(false);
     }
 
     // Update is called once per frame
@@ -60,14 +55,6 @@ public class MenuSceneManager : MonoBehaviour
         {
             settingsSceneOpen = true;
         }
-        if (campaignUI.active)
-        {
-            campaignUISceneOpen = false;
-        }
-        else
-        {
-            campaignUISceneOpen = true;
-        }
         //end of bool stuff
 
         //for settings ui
@@ -75,30 +62,18 @@ public class MenuSceneManager : MonoBehaviour
         {
             exitBackToGamePlayScene.SetActive(true);
            // SettingsButtonGFX.GetComponent<>().isEnabled = false;
-        } else
-        {
-            //settingsUI.GetComponent<Button>().enabled = true;
-        }
+        } 
+
         //for music ui
         if (musicScenOpen)
         {
             exitBackToGamePlayScene.SetActive(true);
-           // musicUi.GetComponent<Button>().enabled = false;
         }
-        else
-        {
-           // musicUi.GetComponent<Button>().enabled = true;
-        }
+
         //For main menuu ui
         if (gamePlaySceneOpen)
         {
                 exitBackToGamePlayScene.SetActive(false);
         }
-
-       if (campaignUISceneOpen)
-       {
-            gamePlayUI.SetActive(false);
-            exitBackToGamePlayScene.SetActive(true);
-       }
     }
 }
