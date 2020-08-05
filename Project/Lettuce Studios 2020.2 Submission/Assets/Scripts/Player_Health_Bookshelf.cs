@@ -21,7 +21,38 @@ public class Player_Health_Bookshelf : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        switch (health)
+        {
+            case 8:
+                damage(0);
+                break;
+            case 7:
+                damage(1);
+                break;
+            case 6:
+                damage(2);
+                break;
+            case 5:
+                damage(3);
+                break;
+            case 4:
+                damage(4);
+                break;
+            case 3:
+                damage(5);
+                break;
+            case 2:
+                damage(6);
+                break;
+            case 1:
+                damage(7);
+                break;
+            case 0:
+                damage(8);
+                break;
+            default:
+                break;
+        }
     }
 
     public void damage(int Health)
