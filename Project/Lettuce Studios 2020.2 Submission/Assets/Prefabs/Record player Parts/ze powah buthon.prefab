@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 3163173172162404863}
   - component: {fileID: 2037478512518637677}
   - component: {fileID: 361173508243663586}
-  m_Layer: 0
+  - component: {fileID: 8397208176194165707}
+  - component: {fileID: 8397208176194165704}
+  m_Layer: 10
   m_Name: ze powah buthon
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3013907824476846292}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: -8.675777, y: 6.108415, z: 21.878622}
-  m_LocalScale: {x: 77.79873, y: 77.79871, z: 27.125937}
+  m_LocalScale: {x: 6.253534, y: 6.253529, z: 4.280139}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
 --- !u!33 &2037478512518637677
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -39,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3013907824476846292}
-  m_Mesh: {fileID: -882541530786553027, guid: ff4eb70364b01554d8d3a358d037f4be, type: 3}
+  m_Mesh: {fileID: -882541530786553027, guid: adc4a279a5b779e4894fb195faf4fba2, type: 3}
 --- !u!23 &361173508243663586
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -79,3 +81,31 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &8397208176194165707
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3013907824476846292}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02, y: 0.019999994, z: 0.019999996}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8397208176194165704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3013907824476846292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180e92a14ce364349a36c8d0b9253709, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  knob: 0
+  plauqe: 0
