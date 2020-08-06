@@ -8,9 +8,9 @@ public class PlayerMovement : MonoBehaviour
     //Moving
     public Rigidbody rb;
     public GameObject pivot;
-    public Vector3 speed = new Vector3(15, 0, 30);
-    public float gravity;
-    public float maxVelocityChange;
+    public Vector3 speed = new Vector3(300, 0, -1);
+    public float gravity = 200;
+    public float maxVelocityChange = 8;
     public float groundRaySize = 1;
     private Vector3 originalPosition;
 
@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
     //Jumping
     public bool canJump = true;
-    public float jumpHeight;
+    public float jumpHeight = 5;
     public int maxJumps = 1;
     private int jumpValue = 0;
     #endregion fields
