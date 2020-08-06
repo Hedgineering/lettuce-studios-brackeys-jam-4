@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Obstacle : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class Obstacle : MonoBehaviour
     {
         if (collision.transform.tag == "Player")
         {
-            int playerHealth = collision.transform.GetComponent<PlayerStats>().health -= 1;
+            int playerHealth = Convert.ToInt16(collision.transform.GetComponent<PlayerStats>().health -= 1);
             Debug.Log(playerHealth);
             Destroy(gameObject);
         }

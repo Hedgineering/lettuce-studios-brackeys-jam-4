@@ -8,9 +8,6 @@ using UnityEditor.UI;
 
 public class MenuSceneManager : MonoBehaviour
 {
-    public GameObject SettingsButtonGFX;
-    public GameObject MusicButtonGFX;
-
     public GameObject settingsUI;
     public GameObject musicUi;
     public GameObject gamePlayUI;
@@ -19,14 +16,14 @@ public class MenuSceneManager : MonoBehaviour
     public bool musicScenOpen;
     public  bool settingsSceneOpen;
     public bool gamePlaySceneOpen;
-   
-
+    //
     // Start is called before the first frame update
     void Start()
     {
         gamePlayUI.SetActive(true);
         settingsUI.SetActive(false);
         musicUi.SetActive(false);
+        exitBackToGamePlayScene.SetActive(false);
     }
 
     // Update is called once per frame
@@ -65,25 +62,18 @@ public class MenuSceneManager : MonoBehaviour
         {
             exitBackToGamePlayScene.SetActive(true);
            // SettingsButtonGFX.GetComponent<>().isEnabled = false;
-        } else
-        {
-            //settingsUI.GetComponent<Button>().enabled = true;
-        }
+        } 
+
         //for music ui
         if (musicScenOpen)
         {
             exitBackToGamePlayScene.SetActive(true);
-           // musicUi.GetComponent<Button>().enabled = false;
         }
-        else
-        {
-           // musicUi.GetComponent<Button>().enabled = true;
-        }
+
         //For main menuu ui
         if (gamePlaySceneOpen)
         {
                 exitBackToGamePlayScene.SetActive(false);
-        } 
-
+        }
     }
 }

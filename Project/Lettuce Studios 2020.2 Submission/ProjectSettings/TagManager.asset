@@ -8,6 +8,7 @@ TagManager:
   - Midline
   - DiskBound
   - CenterTrigger
+  - Knob
   layers:
   - Default
   - TransparentFX
