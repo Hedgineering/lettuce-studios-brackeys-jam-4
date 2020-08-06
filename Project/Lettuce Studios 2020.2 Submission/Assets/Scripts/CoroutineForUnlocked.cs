@@ -18,7 +18,7 @@ public class CoroutineForUnlocked : MonoBehaviour
     
     public IEnumerator UnlockPause()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         unlockScene.SetActive(true);
     }
 }
