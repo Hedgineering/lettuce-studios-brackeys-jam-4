@@ -5989,64 +5989,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1942899501}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1966481570 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5023371180220443200, guid: b08c75d65883051489bb477e24e9e348,
-    type: 3}
-  m_PrefabInstance: {fileID: 6459723994579964528}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1966481572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1966481570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3284658f704fb504f9371c555cd137ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  disc: {fileID: 1913398543679283129}
-  ObstacletTypeMax: 0
-  spawnRate: 2
-  disconly:
-    serializedVersion: 2
-    m_Bits: 512
---- !u!1 &2001862634 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4233911187030459579, guid: 073a70600ec47f54e84e6362321b0add,
-    type: 3}
-  m_PrefabInstance: {fileID: 4973372063479161290}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2001862638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2001862634}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 180e92a14ce364349a36c8d0b9253709, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
-  knob: 0
-  plauqe: 0
---- !u!65 &2001862639
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2001862634}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.04055376, y: 0.019999996, z: 0.0012577825}
-  m_Center: {x: 0, y: 0.00000047683716, z: -0.0006284117}
 --- !u!1 &2018347760 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1547454222395999617, guid: d4830ab8af7efc84895404dad214108c,
@@ -7488,16 +7430,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ze otha buthon
       objectReference: {fileID: 0}
-    - target: {fileID: 1547454222395999617, guid: d4830ab8af7efc84895404dad214108c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Button
-      objectReference: {fileID: 0}
-    - target: {fileID: 1547454222395999617, guid: d4830ab8af7efc84895404dad214108c,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 4863496184297571233, guid: d4830ab8af7efc84895404dad214108c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8108,16 +8040,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ze vollume
       objectReference: {fileID: 0}
-    - target: {fileID: 6060320132033245305, guid: 2b4d7ba023f537d4a938ae165bb48036,
-        type: 3}
-      propertyPath: m_TagString
-      value: Knob
-      objectReference: {fileID: 0}
-    - target: {fileID: 6060320132033245305, guid: 2b4d7ba023f537d4a938ae165bb48036,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b4d7ba023f537d4a938ae165bb48036, type: 3}
 --- !u!4 &5063577664474902421 stripped
@@ -8445,21 +8367,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1222826376}
     m_Modifications:
-    - target: {fileID: 2794741132939253597, guid: b08c75d65883051489bb477e24e9e348,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.0062
-      objectReference: {fileID: 0}
-    - target: {fileID: 2794741132939253597, guid: b08c75d65883051489bb477e24e9e348,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.0055
-      objectReference: {fileID: 0}
-    - target: {fileID: 2794741132939253597, guid: b08c75d65883051489bb477e24e9e348,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
     - target: {fileID: 3903176832867450599, guid: b08c75d65883051489bb477e24e9e348,
         type: 3}
       propertyPath: m_Name
@@ -8822,16 +8729,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ze powah buthon
-      objectReference: {fileID: 0}
-    - target: {fileID: 3013907824476846292, guid: fb7b86a0e4c119c4dae150c39366efeb,
-        type: 3}
-      propertyPath: m_TagString
-      value: Button
-      objectReference: {fileID: 0}
-    - target: {fileID: 3013907824476846292, guid: fb7b86a0e4c119c4dae150c39366efeb,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3163173172162404863, guid: fb7b86a0e4c119c4dae150c39366efeb,
         type: 3}
