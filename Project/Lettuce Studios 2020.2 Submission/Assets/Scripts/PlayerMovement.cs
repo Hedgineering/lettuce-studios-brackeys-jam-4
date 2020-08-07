@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public float maxVelocityChange = 8;
     public float groundRaySize = 1;
     private Vector3 originalPosition;
+    public bool invertedControls;
 
     //Ground Check Stuff
     Ray ray;
@@ -59,6 +60,10 @@ public class PlayerMovement : MonoBehaviour
         if (IsGrounded())
         {
             Vector3 targetVelocity = new Vector3(Input.GetAxisRaw("Horizontal") * speed.x, 0, Input.GetAxisRaw("Vertical") * speed.z);
+            if (invertedControls)
+            {
+                targetVelocity = -targetVelocity;
+            }
 
             //Running cat forward (counterclockwise around disk) and backward (clockwise)
             Vector3 pivotRotation = pivot.transform.rotation.eulerAngles;
