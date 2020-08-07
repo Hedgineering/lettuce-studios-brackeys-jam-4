@@ -45,7 +45,6 @@ public class PlayerMovement : MonoBehaviour
         
         DoubleJumping();
         ResetJumpValue();
-        Debug.DrawRay(transform.position, Vector3.down * groundRaySize);
     }
 
     void FixedUpdate()
@@ -61,15 +60,18 @@ public class PlayerMovement : MonoBehaviour
         {
             Vector3 targetVelocity = new Vector3(Input.GetAxisRaw("Horizontal") * speed.x, 0, Input.GetAxisRaw("Vertical") * speed.z);
 
+            //Running cat forward (counterclockwise around disk) and backward (clockwise)
             Vector3 pivotRotation = pivot.transform.rotation.eulerAngles;
-            pivot.transform.eulerAngles += Vector3.up * targetVelocity.z;
-            rb.AddRelativeForce(Vector3.right * targetVelocity.x * Time.deltaTime, ForceMode.VelocityChange);
+            pivot.transform.eulerAngles += Vector3.up * targetVelocity.z * Time.fixedDeltaTime;
+
+            //Sideways force for cat
+            rb.AddRelativeForce(Vector3.right * targetVelocity.x * Time.fixedDeltaTime, ForceMode.VelocityChange);
 
         }
 
       
-
-        rb.AddForce(new Vector3(0, -gravity * rb.mass, 0));
+        //Downforce
+        rb.AddForce(new Vector3(0, -gravity * rb.mass * Time.fixedDeltaTime, 0));
     }
     #endregion movement
 
@@ -79,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
         //Initial Jump
         if (IsGrounded() && canJump && Input.GetKeyDown(KeyCode.Space))
         {
-            rb.velocity = new Vector3(rb.velocity.x, JumpForce(), rb.velocity.z);
+            rb.velocity = new Vector3(rb.velocity.x, JumpForce() * Time.fixedDeltaTime, rb.velocity.z);
         }
 
         //Further Jumps off the ground --Not Currently Functional
