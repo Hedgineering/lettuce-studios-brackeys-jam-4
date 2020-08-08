@@ -38,6 +38,26 @@ public class ButtonClicker : MonoBehaviour
                     hit.transform.gameObject.SendMessage("click");
                 }
             }
+            //if (Physics.Raycast(ray,out hit, rayLength, layermask))
+            //{
+            //    if(hit.collider.tag == "Knob")
+            //    {
+            //        knob = hit.collider.gameObject;
+            //    }
+            //}
+        }
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            if(damageint == 0)
+            {
+                ph.damage(0);
+                damageint += 1;
+            }
+            else
+            {
+                ph.damage(damageint);
+                damageint += 1;
+            }
         }
     }
 
