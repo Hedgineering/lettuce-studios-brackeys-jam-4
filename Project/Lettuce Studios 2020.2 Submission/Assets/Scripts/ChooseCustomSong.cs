@@ -81,7 +81,7 @@ public class ChooseCustomSong : MonoBehaviour
                                 #region debugclip
                                 //song.clip = DownloadHandlerAudioClip.GetContent(unityWebRequestWav);
                                 //song.Play();
-                                Playlist.Print();
+                                //Playlist.Print();
                                 //song.clip = Playlist.getClip(10);
                                 //song.Play();
                                 //print("clip assigned!");
