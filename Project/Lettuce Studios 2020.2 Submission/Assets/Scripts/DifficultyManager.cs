@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class DifficultyManager : MonoBehaviour
 {
-    public GameObject Point, Player, Disc, Knob;
+    public GameObject Point, Player, Disc, Knob, RewindText;
 
     public bool rewind, invertControls, allowControlInversion;
     [SerializeField] float rewindDelay;
@@ -65,6 +65,7 @@ public class DifficultyManager : MonoBehaviour
                     invertControls = !invertControls;
                     if (invertControls) movement.InvertControls();
                 }
+                //RewindText.SetActive(RewindText.activeInHierarchy);
                 spinner.Reverse();
                 nextRewindTime += rewindDelay;
             }
@@ -82,16 +83,20 @@ public class DifficultyManager : MonoBehaviour
                     invertControls = !invertControls;
                     if(invertControls) movement.InvertControls();
                 }
-                
+                //RewindText.SetActive(RewindText.activeInHierarchy);
                 spinner.Reverse();
                 nextRewindTime += rewindDelay;
             }
         }
 
-        //if (rewind)
-        //{
-        //    spinner.Reverse();
-        //}
+        if (!rewind)
+        {
+            RewindText.SetActive(true);
+        }
+        else
+        {
+            RewindText.SetActive(false);
+        }
 
         //if (invertControls)
         //{
