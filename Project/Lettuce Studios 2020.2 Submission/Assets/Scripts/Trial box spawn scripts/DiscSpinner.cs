@@ -16,7 +16,7 @@ public class DiscSpinner : MonoBehaviour
 
     public float speed;
 
-    public bool Reverse;
+    public static bool Reverse;
 
 
     public List<obstacles> pools;
@@ -42,6 +42,13 @@ public class DiscSpinner : MonoBehaviour
         }
 
         
+    }
+
+    public void SetRatio(Vector3 ratio)
+    {
+        pools[0].size = Mathf.RoundToInt(ratio.x);
+        pools[1].size = Mathf.RoundToInt(ratio.y);
+        pools[2].size = Mathf.RoundToInt(ratio.z);
     }
 
     // Update is called once per frame

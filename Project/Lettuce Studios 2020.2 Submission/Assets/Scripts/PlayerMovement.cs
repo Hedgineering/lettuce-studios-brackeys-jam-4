@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public float maxVelocityChange = 8;
     public float groundRaySize = 1;
     private Vector3 originalPosition;
-    public bool invertedControls;
+    public static bool invertedControls;
 
     //Ground Check Stuff
     Ray ray;

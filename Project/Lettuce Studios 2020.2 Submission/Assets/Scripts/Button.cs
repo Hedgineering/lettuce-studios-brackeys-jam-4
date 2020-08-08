@@ -16,6 +16,8 @@ public class Button : MonoBehaviour
     public bool knob;
     
     float Amount;
+    public float defaultVolume;
+    bool firstIteration = true;
 
     [SerializeField] bool plauqe;
 
@@ -25,16 +27,20 @@ public class Button : MonoBehaviour
     {
         if (knob)
         {
-
+            defaultVolume = defaultVolume == 0f ? AudioLevels.musicVol : defaultVolume;
+            Amount = defaultVolume;
             source = GetComponent<AudioSource>();
         }
     }
 
     private void Update()
     {
-        
-
         Amount = Mathf.Clamp01(Amount);
+        if (firstIteration)
+        {
+            Amount = defaultVolume;
+            firstIteration = false;
+        }
         if (knob)
         {
             source.volume = Amount;
