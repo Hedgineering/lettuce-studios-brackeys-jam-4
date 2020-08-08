@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class DifficultyManager : MonoBehaviour
 {
     public GameObject Point, Player, Disc, Knob, RewindText;
+    public AudioSource RewindSound;
+    public TextMeshProUGUI timelefttext;
 
     public bool rewind, invertControls, allowControlInversion;
     [SerializeField] float rewindDelay;
@@ -15,7 +18,7 @@ public class DifficultyManager : MonoBehaviour
     [SerializeField] float _discSpeed = 200;
     [SerializeField] float survivalDuration;
 
-    private float nextRewindTime, nextLevelTime;
+    private float nextRewindTime, nextLevelTime, timeleft;
     DiscSpinner spinner;
     BoxSpawner spawner;
     PlayerMovement movement;
@@ -34,6 +37,7 @@ public class DifficultyManager : MonoBehaviour
         spinner.speed = _discSpeed;
 
         movement = Player.GetComponent<PlayerMovement>();
+        timeleft = survivalDuration;
     }
 
     IEnumerator SetDefaults()
@@ -53,6 +57,9 @@ public class DifficultyManager : MonoBehaviour
 
     private void Update()
     {
+        timeleft -= Time.deltaTime;
+        timelefttext.SetText(Mathf.RoundToInt(timeleft).ToString());
+        
         //Rewind Mechanic
         if (!randomRewind)
         {
@@ -95,6 +102,7 @@ public class DifficultyManager : MonoBehaviour
         }
         else
         {
+            RewindSound.Play();
             RewindText.SetActive(false);
         }
 
@@ -112,6 +120,7 @@ public class DifficultyManager : MonoBehaviour
 
     private void SwitchToNextScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if(SceneManager.GetActiveScene().buildIndex < 10) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        else SceneManager.LoadScene(0);
     }
 }

@@ -11,11 +11,13 @@ public class DiscSpinner : MonoBehaviour
 
         public GameObject prefab;
 
+        public float lifetime;
+
         public int size;
     }
 
     public float speed;
-
+    
     public bool reverse;
 
 

@@ -9,18 +9,33 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu 1.unity
     guid: 3dc434b616489be48b22e5ea25e3dc09
   - enabled: 1
-    path: Assets/Scenes/Trial RecordPlayer.unity
-    guid: 7e5196dec3511664fa36c52b65de9a94
-  - enabled: 1
     path: Assets/Scenes/C_level_1.unity
     guid: 7b952b14df6c792468059291c69bd6d2
   - enabled: 1
-    path: Assets/Scenes/Level1.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/C_level_2.unity
+    guid: 5121465e03507784b8a72600d5cae498
   - enabled: 1
-    path: Assets/Scenes/EndlessRunnerMode.unity
-    guid: 7bfa1d8064f4fc54ea4eb494430d095f
-  - enabled: 0
-    path: Assets/Scenes/Level Selection Menu.unity
-    guid: 4ce650c62027f5e4b8ba386fd12fcc27
+    path: Assets/Scenes/C_level_3.unity
+    guid: 6bc16471dd9131640869276297776e47
+  - enabled: 1
+    path: Assets/Scenes/C_level_4.unity
+    guid: 66643bf32906b724787a60db5664eed2
+  - enabled: 1
+    path: Assets/Scenes/C_level_5.unity
+    guid: 3b93bbe8694116b40859308f9c361663
+  - enabled: 1
+    path: Assets/Scenes/C_level_6.unity
+    guid: 1fda6cad35406cb4db4448d7019ab352
+  - enabled: 1
+    path: Assets/Scenes/C_level_7.unity
+    guid: bffc830ed99ae4347a334ae9799d0f2e
+  - enabled: 1
+    path: Assets/Scenes/C_level_8.unity
+    guid: 585575ae94bc57a4b9ee396de6700a67
+  - enabled: 1
+    path: Assets/Scenes/C_level_9.unity
+    guid: e6d4baa1b1f0e0541bc379fb9bd93030
+  - enabled: 1
+    path: Assets/Scenes/C_level_10.unity
+    guid: be6c1801873590a47bed5ae17ac20e5b
   m_configObjects: {}
