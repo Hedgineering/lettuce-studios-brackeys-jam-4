@@ -1,9 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 <<<<<<< HEAD:Project/Lettuce Studios 2020.2 Submission/Assets/Plugins.meta
-guid: 35455b2f1e2bc3948971fb96424e994c
+guid: b49f147fc732f7a499287f10aeda4c62
 =======
 guid: a34c8d9361b0d104e9222994655cbb9d
 >>>>>>> master:Project/Lettuce Studios 2020.2 Submission/Assets/Package.meta
+=======
+guid: 757675efc70c2dd4783902727c8e5f6e
+>>>>>>> Stashed changes
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
