@@ -3225,7 +3225,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 377590713}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 997724628}
+        m_MethodName: ResetPlaylist
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &377590713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5018,7 +5029,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 668112854}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 997724627}
+        m_MethodName: OpenExplorer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &668112854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5205,8 +5227,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 62.43, y: -169.4}
-  m_SizeDelta: {x: 647.5199, y: 23.251743}
+  m_AnchoredPosition: {x: -59.7, y: -185.8}
+  m_SizeDelta: {x: 403.22766, y: 56.06715}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &742993005
 MonoBehaviour:
@@ -7507,6 +7529,8 @@ GameObject:
   m_Component:
   - component: {fileID: 997724625}
   - component: {fileID: 997724626}
+  - component: {fileID: 997724628}
+  - component: {fileID: 997724627}
   m_Layer: 5
   m_Name: MusicAudioManager
   m_TagString: Untagged
@@ -7629,6 +7653,31 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &997724627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997724624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce560dac82947f9488538ff16330703f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathText: {fileID: 742993005}
+--- !u!114 &997724628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997724624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7314752ff68214a4cba302d13da7e299, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &999308138
 GameObject:
   m_ObjectHideFlags: 0
@@ -9760,7 +9809,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1311672045
 RectTransform:
   m_ObjectHideFlags: 0
