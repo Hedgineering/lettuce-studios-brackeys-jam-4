@@ -16,7 +16,7 @@ public class DiscSpinner : MonoBehaviour
 
     public float speed;
 
-    public static bool Reverse;
+    public bool reverse;
 
 
     public List<obstacles> pools;
@@ -44,6 +44,11 @@ public class DiscSpinner : MonoBehaviour
         
     }
 
+    public void Reverse()
+    {
+        reverse = !reverse;
+    }
+
     public void SetRatio(Vector3 ratio)
     {
         pools[0].size = Mathf.RoundToInt(ratio.x);
@@ -54,7 +59,7 @@ public class DiscSpinner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Reverse)
+        if (reverse)
         {
 
             this.transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x,

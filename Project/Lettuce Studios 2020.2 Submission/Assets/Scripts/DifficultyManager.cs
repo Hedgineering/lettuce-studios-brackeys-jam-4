@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class DifficultyManager : MonoBehaviour
 {
-    GameObject Point, Player, Disc, Knob;
+    public GameObject Point, Player, Disc, Knob;
 
     public bool rewind, invertControls, allowControlInversion;
     [SerializeField] float rewindDelay;
@@ -15,24 +16,40 @@ public class DifficultyManager : MonoBehaviour
     [SerializeField] float survivalDuration;
 
     private float nextRewindTime, nextLevelTime;
+    DiscSpinner spinner;
+    BoxSpawner spawner;
+    PlayerMovement movement;
 
     private void Start()
     {
-        Point = GameObject.FindGameObjectWithTag("Spawnpoint");
-        Player = GameObject.FindGameObjectWithTag("Player");
-        Disc = GameObject.FindGameObjectWithTag("Disc");
-        Knob = GameObject.FindGameObjectWithTag("Knob");
-
-        nextRewindTime = Time.time + rewindDelay;
-        nextLevelTime = Time.time + survivalDuration;
+        nextRewindTime = Time.timeSinceLevelLoad + rewindDelay;
+        nextLevelTime = Time.timeSinceLevelLoad + survivalDuration;
         invertControls = false;
 
-        Point.GetComponent<BoxSpawner>().spawnRate = _spawnRate;
+        spawner = Point.GetComponent<BoxSpawner>();
+        spawner.spawnRate = _spawnRate;
+
+        spinner = Disc.GetComponent<DiscSpinner>();
+        spinner.SetRatio(spawnRatio);
+        spinner.speed = _discSpeed;
+
+        movement = Player.GetComponent<PlayerMovement>();
+    }
+
+    IEnumerator SetDefaults()
+    {
         
 
-        Disc.GetComponent<DiscSpinner>().SetRatio(spawnRatio); //x = Catnip, y = thumbtac, z = yarnball
-        Disc.GetComponent<DiscSpinner>().speed = _discSpeed;
+        yield return new WaitForSeconds(2);
     }
+
+    //IEnumerator Rewind()
+    //{
+    //    while (true)
+    //    {
+
+    //    }
+    //}
 
     private void Update()
     {
@@ -40,10 +57,11 @@ public class DifficultyManager : MonoBehaviour
         if (!randomRewind)
         {
             //Time based rewind
-            if (Time.time >= nextRewindTime) //if time to rewind, then rewind
+            if (Time.timeSinceLevelLoad >= nextRewindTime) //if time to rewind, then rewind
             {
                 rewind = !rewind;
                 if (allowControlInversion) invertControls = !invertControls;
+                spinner.Reverse();
                 nextRewindTime += rewindDelay;
             }
         }
@@ -51,26 +69,28 @@ public class DifficultyManager : MonoBehaviour
         {
             //Randomized Delay based rewind
             rewindDelay = UnityEngine.Random.Range(3, 10);
-            if (Time.time >= nextRewindTime) //if time to rewind, then rewind
+
+            if (Time.timeSinceLevelLoad >= nextRewindTime) //if time to rewind, then rewind
             {
                 rewind = !rewind;
                 if (allowControlInversion) invertControls = !invertControls;
+                spinner.Reverse();
                 nextRewindTime += rewindDelay;
             }
         }
 
-        if (rewind)
-        {
-            DiscSpinner.Reverse = true;
-        }
+        //if (rewind)
+        //{
+        //    spinner.Reverse();
+        //}
 
         if (invertControls)
         {
-            PlayerMovement.invertedControls = true;
+            movement.InvertControls();
         }
 
         //Scene Transition
-        if (Time.time >= nextLevelTime)
+        if (Time.timeSinceLevelLoad >= survivalDuration)
         {
             SwitchToNextScene();
         }

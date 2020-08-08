@@ -13,7 +13,8 @@ public class PlayerMovement : MonoBehaviour
     public float maxVelocityChange = 8;
     public float groundRaySize = 1;
     private Vector3 originalPosition;
-    public static bool invertedControls;
+    public bool invertedControls;
+    public float rotationBound = 10;
 
     //Ground Check Stuff
     Ray ray;
@@ -70,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
 
             //Running cat forward (counterclockwise around disk) and backward (clockwise)
             Vector3 pivotRotation = pivot.transform.rotation.eulerAngles;
-            pivot.transform.eulerAngles += Vector3.up * targetVelocity.z * Time.fixedDeltaTime;
+            pivot.transform.eulerAngles = Mathf.Abs(pivot.transform.eulerAngles.y) < rotationBound ? pivot.transform.eulerAngles + Vector3.up * targetVelocity.z * Time.fixedDeltaTime : pivot.transform.eulerAngles;
 
             //Sideways force for cat
             rb.AddRelativeForce(Vector3.right * targetVelocity.x * Time.fixedDeltaTime, ForceMode.VelocityChange);
@@ -80,6 +81,11 @@ public class PlayerMovement : MonoBehaviour
       
         //Downforce
         rb.AddForce(new Vector3(0, -gravity * rb.mass * Time.fixedDeltaTime, 0));
+    }
+
+    public void InvertControls()
+    {
+        invertedControls = !invertedControls;
     }
     #endregion movement
 
