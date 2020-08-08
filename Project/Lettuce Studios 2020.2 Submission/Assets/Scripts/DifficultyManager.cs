@@ -60,7 +60,11 @@ public class DifficultyManager : MonoBehaviour
             if (Time.timeSinceLevelLoad >= nextRewindTime) //if time to rewind, then rewind
             {
                 rewind = !rewind;
-                if (allowControlInversion) invertControls = !invertControls;
+                if (allowControlInversion)
+                {
+                    invertControls = !invertControls;
+                    if (invertControls) movement.InvertControls();
+                }
                 spinner.Reverse();
                 nextRewindTime += rewindDelay;
             }
@@ -73,7 +77,12 @@ public class DifficultyManager : MonoBehaviour
             if (Time.timeSinceLevelLoad >= nextRewindTime) //if time to rewind, then rewind
             {
                 rewind = !rewind;
-                if (allowControlInversion) invertControls = !invertControls;
+                if (allowControlInversion) 
+                {
+                    invertControls = !invertControls;
+                    if(invertControls) movement.InvertControls();
+                }
+                
                 spinner.Reverse();
                 nextRewindTime += rewindDelay;
             }
@@ -84,10 +93,10 @@ public class DifficultyManager : MonoBehaviour
         //    spinner.Reverse();
         //}
 
-        if (invertControls)
-        {
-            movement.InvertControls();
-        }
+        //if (invertControls)
+        //{
+        //    movement.InvertControls();
+        //}
 
         //Scene Transition
         if (Time.timeSinceLevelLoad >= survivalDuration)
