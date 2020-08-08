@@ -25,19 +25,26 @@ public class ChooseCustomSong : MonoBehaviour
     public void OpenExplorer()
     {
         path = EditorUtility.OpenFilePanel("Choose your song", "", ".mp3");
-        if (path != null)
+        if (path != null && !path.Equals(""))
         {
             pathText.SetText(path);
             CreateOutPath(path);
+            StartCoroutine(SetSong());
         }
-        StartCoroutine(SetSong());
+        
+    }
+
+    public void ResetSelection()
+    {
+        pathText.SetText("SURVIVE: Highway at Night (Custom Made)");
+        Playlist.ResetPlaylist();
     }
 
     private void CreateOutPath(string path)
     {
-        string temp = path.Substring(0, path.LastIndexOf(".mp3"));
+        string temp = path.LastIndexOf(".mp3") > 0 ? path.Substring(0, path.LastIndexOf(".mp3")) : "C:/song";
         outpath = temp + ".wav";
-        print(outpath);
+        //print(outpath);
     }
 
     IEnumerator SetSong()
@@ -70,17 +77,15 @@ public class ChooseCustomSong : MonoBehaviour
                             }
                             else
                             {
+                                Playlist.setClip(DownloadHandlerAudioClip.GetContent(unityWebRequestWav));
                                 #region debugclip
                                 //song.clip = DownloadHandlerAudioClip.GetContent(unityWebRequestWav);
                                 //song.Play();
-                                //Playlist.Print();
+                                Playlist.Print();
                                 //song.clip = Playlist.getClip(10);
                                 //song.Play();
                                 //print("clip assigned!");
                                 #endregion debugclip
-
-                                Playlist.setClip(DownloadHandlerAudioClip.GetContent(unityWebRequestWav));
-                                
                             }
                         }
 

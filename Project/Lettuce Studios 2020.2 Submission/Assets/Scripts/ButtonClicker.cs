@@ -8,8 +8,7 @@ public class ButtonClicker : MonoBehaviour
 
     public float rayLength;
     public LayerMask layermask;
-
-    [SerializeField] bool pressed;
+    
 
     GameObject knob;
     
@@ -39,14 +38,13 @@ public class ButtonClicker : MonoBehaviour
                     hit.transform.gameObject.SendMessage("click");
                 }
             }
-            if (Physics.Raycast(ray,out hit, rayLength, layermask))
-            {
-                if(hit.collider.tag == "Knob")
-                {
-                    pressed = true;
-                    knob = hit.collider.gameObject;
-                }
-            }
+            //if (Physics.Raycast(ray,out hit, rayLength, layermask))
+            //{
+            //    if(hit.collider.tag == "Knob")
+            //    {
+            //        knob = hit.collider.gameObject;
+            //    }
+            //}
         }
         if (Input.GetKeyDown(KeyCode.X))
         {

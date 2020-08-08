@@ -9,6 +9,7 @@ TagManager:
   - DiskBound
   - CenterTrigger
   - Knob
+  - CustomizableSongText
   layers:
   - Default
   - TransparentFX

@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Playlist : MonoBehaviour
 {
     private static AudioClip[] playlist = new AudioClip[11];
+    private static AudioClip endMusic;
 
     private void Awake()
     {
@@ -19,7 +21,10 @@ public class Playlist : MonoBehaviour
         playlist[8] = Resources.Load("Music/The Musical Ghost - Potato Chips [Electro Swing] [CC BY]") as AudioClip;
         playlist[9] = Resources.Load("Music/Amarià - Lovely Swindle [Electro Swing] [CC BY]") as AudioClip;
         playlist[10] = Resources.Load("Music/EndMusic") as AudioClip;
+
+        endMusic = playlist[10];
     }
+
 
     //You may only change the last slot publicly
     public static void setClip(AudioClip clip)
@@ -34,7 +39,7 @@ public class Playlist : MonoBehaviour
 
     public static void ResetPlaylist()
     {
-        playlist[10] = Resources.Load("EndMusic") as AudioClip;
+        playlist[10] = endMusic;
     }
 
     public static void Print()

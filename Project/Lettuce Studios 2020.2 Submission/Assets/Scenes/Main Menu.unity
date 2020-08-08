@@ -3226,8 +3226,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 997724628}
-        m_MethodName: ResetPlaylist
+      - m_Target: {fileID: 997724627}
+        m_MethodName: ResetSelection
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5206,7 +5206,7 @@ GameObject:
   - component: {fileID: 742993005}
   m_Layer: 5
   m_Name: Song Endless
-  m_TagString: Untagged
+  m_TagString: CustomizableSongText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
