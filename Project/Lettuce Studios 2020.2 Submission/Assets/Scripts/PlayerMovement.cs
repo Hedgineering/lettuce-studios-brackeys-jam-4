@@ -24,6 +24,9 @@ public class PlayerMovement : MonoBehaviour
     public float jumpHeight = 5;
     public int maxJumps = 1;
     private int jumpValue = 0;
+
+    //Damage
+    public Player_Health_Bookshelf phb;
     #endregion fields
 
     #region monoBehaviorLoops
@@ -121,4 +124,33 @@ public class PlayerMovement : MonoBehaviour
     {
         transform.position = originalPosition;
     }    
+
+    public void damage(int type)
+    {
+        if (type == 1)
+        {
+            phb.HealthDamage();
+        }
+        else if (type == 2)
+        {
+            StartCoroutine(twice());
+            IEnumerator twice()
+            {
+                phb.HealthDamage();
+                yield return new WaitForSeconds(0.5f);
+                phb.HealthDamage();
+            }
+            
+
+        }
+        else
+        {
+            Debug.Log("Type not recognized.");
+        }
+        
+    }
+    public void heal()
+    {
+        phb.heal();
+    }
 }
