@@ -77,7 +77,6 @@ public class DiscSpinner : MonoBehaviour
         spawn.SetActive(true);
 
         spawn.transform.position = pos;
-        spawn.transform.localScale = new Vector3(1,1,1);
         spawn.transform.parent = this.transform;
 
         pooldictionary[objtype].Enqueue(spawn);

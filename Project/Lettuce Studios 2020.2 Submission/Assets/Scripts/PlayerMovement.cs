@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        
+        transform.localRotation = Quaternion.Euler(-13.479f, -90, -90);
         DoubleJumping();
         ResetJumpValue();
     }
