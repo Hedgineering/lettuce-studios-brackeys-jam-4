@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseUI;
+    bool paused;
 
     private void Start()
     {
@@ -14,16 +15,18 @@ public class PauseMenu : MonoBehaviour
 
     private void Update()
     {
-        Pause();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            paused = !paused;
+            if (paused) Pause();
+            else Resume();
+        }
     }
 
     public void Pause()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            pauseUI.SetActive(true);
-            Time.timeScale = 0;
-        }
+        pauseUI.SetActive(true);
+        Time.timeScale = 0;
     }
 
     public void Resume()
@@ -39,7 +42,11 @@ public class PauseMenu : MonoBehaviour
 
     public void GoToMainMenu()
     {
-        SceneManager.LoadScene("Main Menu");
+        Resume();
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Main Menu");     
+        Time.timeScale = 1;
+
     }
 
 }

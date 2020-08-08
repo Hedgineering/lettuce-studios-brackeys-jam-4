@@ -906,7 +906,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 388459292}
-  m_LocalRotation: {x: -0.0270762, y: 0.89537495, z: -0.05496389, w: -0.44107783}
+  m_LocalRotation: {x: -0.02707536, y: 0.8953816, z: -0.054964297, w: -0.44106415}
   m_LocalPosition: {x: -218.35, y: 2275.54, z: 1775.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6057,10 +6057,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46996a7614fe6ac498c18b06fef2928a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reverse: 0
+  rewind: 0
   invertControls: 0
-  spawnRate: 0
-  discSpeed: 0
+  allowControlInversion: 0
+  rewindDelay: 0
+  randomRewind: 0
+  _spawnRate: 0
+  spawnRatio: {x: 0, y: 0, z: 0}
+  _discSpeed: 200
   survivalDuration: 0
 --- !u!4 &1776604889
 Transform:
@@ -6944,7 +6948,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 200
-  Reverse: 1
   pools:
   - ObjectType: 0
     prefab: {fileID: 700722328129624583, guid: 37024e3eace52a34d8d87be214c2789d, type: 3}
@@ -7697,7 +7700,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1811265213441707103}
-  m_LocalRotation: {x: -0.0270762, y: 0.89537495, z: -0.05496389, w: -0.44107783}
+  m_LocalRotation: {x: -0.02707536, y: 0.8953816, z: -0.054964297, w: -0.44106415}
   m_LocalPosition: {x: -218.35, y: 2275.54, z: 1775.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -8916,7 +8919,6 @@ MonoBehaviour:
   gravity: 9000
   maxVelocityChange: 1
   groundRaySize: 1
-  invertedControls: 0
   canJump: 1
   jumpHeight: 500
   maxJumps: 1
